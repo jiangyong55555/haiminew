@@ -1,0 +1,42 @@
+{
+  "name": "HimiNew",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@remobile/react-native-qrcode-local-image": "^1.0.4",
+    "dayjs": "^1.7.8",
+    "react": "16.6.3",
+    "react-native": "0.57.8",
+    "react-native-camera": "^1.6.4",
+    "react-native-elements": "^1.0.0-beta7",
+    "react-native-fs": "^2.12.1",
+    "react-native-gesture-handler": "^1.0.12",
+    "react-native-image-crop-picker": "^0.21.3",
+    "react-native-imui": "^1.0.7",
+    "react-native-netease-im": "^2.0.8",
+    "react-native-qrcode-svg": "^5.1.1",
+    "react-native-root-toast": "^3.0.2",
+    "react-native-spinkit": "^1.1.1",
+    "react-native-splash-screen": "^3.1.1",
+    "react-native-svg": "^8.0.10",
+    "react-native-vector-icons": "^6.1.0",
+    "react-navigation": "^3.0.8",
+    "react-redux": "^6.0.0",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "babel-jest": "23.6.0",
+    "jest": "23.6.0",
+    "metro-react-native-babel-preset": "0.48.5",
+    "react-test-renderer": "16.6.3"
+  },
+  "jest": {
+    "preset": "react-native"
+  },
+  "optionalDependencies": {}
+}
