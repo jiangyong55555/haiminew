@@ -1,6 +1,7 @@
 import React, {PureComponent} from 'react';
 import {View, FlatList, NativeAppEventEmitter, AsyncStorage} from 'react-native';
 import {withTheme,ListItem,Text,Icon} from 'react-native-elements';
+import { NimSession } from 'react-native-netease-im'
 
 import NavigationHeader from '../../navigator/NavigationHeader';
 import ContactItem from '../../common/ContactItem';
@@ -27,19 +28,15 @@ class ChatListScreen extends PureComponent {
      */
     componentDidMount() {
         SplashScreen.hide();
-        AsyncStorage.getItem('session'+globalAccount,(error,result) => {
-            if(!error){
-                if(result){
-                    this.setState({
-                        dataSource: JSON.parse(result).recents
-                    });
-                }
-            }
+        NimSession.getRecentContactList().then( data => {
+            console.log(data.recents);
+            this.setState({
+                dataSource: data.recents
+            });
         });
         this.sessionListener = NativeAppEventEmitter.addListener(
             'observeRecentContact',
             data => {
-                AsyncStorage.setItem('session'+globalAccount,JSON.stringify(data));
                 this.setState({
                     dataSource: data.recents
                 });

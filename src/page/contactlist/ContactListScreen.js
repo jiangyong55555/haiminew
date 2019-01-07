@@ -71,10 +71,14 @@ class ContactListScreen extends PureComponent {
                 }
             }
         });
+        NimFriend.getFriendList('').then(data=>{
+            console.log(data);
+        });
         this.friendListener = NativeAppEventEmitter.addListener(
             'observeFriend',
             data => {
                 AsyncStorage.setItem('contact'+globalAccount,JSON.stringify(data));
+                console.log(data);
                 this.setState({
                     dataSource: this.formatData(data)
                 })

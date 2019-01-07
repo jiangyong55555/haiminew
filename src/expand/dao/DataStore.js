@@ -1,7 +1,7 @@
 import {AsyncStorage} from 'react-native';
 import Toast from "react-native-root-toast";
 
-const HOST = 'https://im8000.com/';
+const HOST = 'http://10.0.2.2/';
 
 export default class DataStore {
     /**

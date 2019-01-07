@@ -26,19 +26,14 @@ class GroupChatList extends PureComponent{
      * 初始化数据
      */
     componentDidMount() {
-        AsyncStorage.getItem('group'+globalAccount,(error,result) => {
-            if(!error){
-                if(result){
-                    this.setState({
-                        dataSource: JSON.parse(result)
-                    });
-                }
-            }
+        NimTeam.getTeamList('').then(data=>{
+            this.setState({
+                dataSource: data
+            });
         });
         this.teamListener = NativeAppEventEmitter.addListener(
             'observeTeam',
             data => {
-                AsyncStorage.setItem('group'+globalAccount,JSON.stringify(data));
                 this.setState({
                     dataSource: data
                 })
